@@ -81,7 +81,12 @@ public:
 	
 	
 	
-	
+	void mostrar(){
+	for(int i = 0; i <= max; i++){
+	cout<<"N "<<i+1<<": " edad[i]<<ednl; 	
+	}
+		
+	}
 	
 	
 	
@@ -106,7 +111,7 @@ int main() {
 	obj.asignar();
 	obj.calcularMedia();
 	cout<<"La media es: "<<obj.calcularMedia()<<endl; 
-	
+	obj.mostrar(); 
 	
 	
 	
