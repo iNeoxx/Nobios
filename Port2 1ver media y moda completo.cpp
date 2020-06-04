@@ -136,25 +136,50 @@ Coleccion obj2;
 
 
 int main() {
-	int sMax; 
-	cout<<"Ingrese la cantidad de personas con las que va a trabajar"<<endl; 
+	int sMax, opc; 
+	cout<<"Bienvenido al administrador de valores estadisticos de la comunidad"<<endl; 
+	system("pause");
+	cout<<"Ingrese la cantidad de personas con las que va a trabajar (Maximo mil personas)"<<endl; 
 	cin>>sMax; 
 	obj.setMax(sMax);
 	obj.asignar();
-	obj.calcularMedia();
-	cout<<"La media es: "<<obj.calcularMedia()<<endl; 
-	obj.mostrar();
-	obj.moda();
 	
+	do{
+		system ("cls"); 
+		cout<<"Menu"<<endl; 
+		cout<<"1.Mostrar edades"<<endl;
+		cout<<"2.Calcular media"<<endl; 
+		cout<<"3.Calcular moda"<<endl; 
+		cout<<"4.Calcular mediana"<<endl; 
+		cout<<"5.Calcular desviacion respecto a la media"<<endl; 
+		cout<<"6.Calcular desviacion media"<<endl; 
+		cout<<"7.Calcular varianza"<<endl; 
+		cout<<"8.Calcular desviacion estandar"<<endl; 
+		cout<<"9.Salir"<<endl; 
+		cin>>opc; 
+		switch (opc){
+			
+		case 1: 
+			
+			obj.mostrar();
+			break; 
+				
+		case 2: 	
+			
+			cout<<"La media es: "<<obj.calcularMedia()<<endl; 
+			break; 
+			
+		case 3: 
+			
+			obj.moda();
+			break; 
+			
+		}
+		system ("pause"); 
+		
+	} while(opc != 9);
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	return 0;
 }
