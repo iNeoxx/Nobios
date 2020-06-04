@@ -27,7 +27,7 @@ public:
 	//inicio + numero aleatorio hasta X
 	for (int i = 0; i <= max; i++)
 	{
-		edad[i] = 1 + rand() % 20;
+		edad[i] = 1 + rand() % 120;
 	}
     
 	}
