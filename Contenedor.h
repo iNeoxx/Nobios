@@ -1,52 +1,47 @@
-#include <iostream>
-#include <stdlib.h>
-using namespace std;
+#ifndef CONTENEDOR_H
+#define CONTENEDOR_H
+#include"Persona.h"
+#endif
 class Contenedor{
 private: 
-	int* ptrVector;
-	int tamanio;
-	int cantidad; 
+	Persona* ptrVector; 
+	int max; 
+	int cantidad;
 public: 
-	Contenedor();
-	~Contenedor();
-	void crear();
-	void ingresar();
-	void mostrar();
-	void eliminar();
+		Contenedor(int);
+		~Contenedor();
+		void ingresar(Persona);
+		void mostrar();
+		void eliminar();
+	
+	
+	
 };
-
-Contenedor::Contenedor(){
+Contenedor::Contenedor(int pMax){
+	max = pMax; 
 	cantidad = 0; 
-	ptrVector = NULL; 
-	tamanio = 0; 
+	ptrVector = new Persona[max];
 }
 Contenedor::~Contenedor(){
 	
 }
-void Contenedor::crear(){
-	cout << "Ingrese el tamanio para el arreglo: " << endl; 
-	cin >> tamanio; 
-	ptrVector = new int[tamanio]; 
-	for(int i = 0; i < tamanio; i++){
-		ptrVector[i] = 0; 
-	} 
-}
-void Contenedor::ingresar(){
-	for(int i = 0; i < tamanio; i++){
-		cout << "Ingrese el valor N" << i+1 << ": " << endl; 
-		cin>> ptrVector[i]; 
-		cantidad ++; 
+void Contenedor::ingresar(Persona pObj){
+	if(cantidad < max){
+		for(int i = 0; i < max; i++){
+			ptrVector[i] = pObj; 
+			cantidad ++; 
+			break; 
+		}
 	}
-	
+	else
+	   cout << "No se pueden ingresar mas objetos" << endl; 
 }
 void Contenedor::mostrar(){
-	for(int i = 0; i < tamanio; i++){
-		cout << "\nEl valor N" << i << " es: " << ptrVector[i] << endl; ; 
+	for(int i = 0; i < cantidad; i++){
+		cout << "Elemento N" << i << endl; 
+		cout << ptrVector[i]-> Persona::toString(); 
 	}
-	
 }
 void Contenedor::eliminar(){
-	delete[] ptrVector; 
 	ptrVector = NULL;
-	cantidad = 0; 
 }
